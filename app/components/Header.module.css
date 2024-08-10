@@ -1,0 +1,97 @@
+.header {
+  background-color: #0b1a36; /* Adjust the color to match your header */
+  padding: 10px 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 5px; /* Adjusted gap */
+}
+
+.menuItem {
+  position: relative;
+}
+
+.menuItem a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px; /* Adjusted font size */
+  padding: 10px 15px;
+}
+
+.menuItem.sale {
+  position: relative;
+}
+
+.menuItem.sale a {
+  background: none;
+  padding: 10px 20px; /* Adjust padding to match the parallelogram shape */
+  font-size: 13px; /* Keep font size the same */
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.menuItem.sale::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #bb2124;
+  transform: skew(-20deg);
+  z-index: 0;
+}
+
+.menuItem.sale a {
+  position: relative;
+  z-index: 1; /* Ensure the text is above the parallelogram */
+}
+
+.menuItem a::after {
+  content: " ▼"; /* Insert a down arrow after the text */
+  font-size: 12px; /* Adjust the size of the arrow */
+}
+
+.menuItem.sale a::after {
+  display: none; /* Remove the arrow from the SALE item */
+}
+
+.menuItem:hover .dropdown {
+  display: block;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px; /* Adjust dropdown width as needed */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown ul li a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown ul li a:hover {
+  background-color: #f1f1f1;
+}
+
+
